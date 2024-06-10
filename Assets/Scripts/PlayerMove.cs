@@ -42,11 +42,11 @@ public class PlayerMove : MonoBehaviour
     void Look(){
         if(_input != Vector3.zero){
 
-            var matrix = Matrix4x4.Rotate(Quaternion.Euler(0,45,0));
+            
 
-            _skewedInput = matrix.MultiplyPoint3x4(_input);
+ 
 
-            var relative = (transform.position + _skewedInput) - transform.position;
+            var relative = (transform.position + _input.ToIso()) - transform.position;
             var rot = Quaternion.LookRotation(relative, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, _turnSpeed * Time.fixedDeltaTime);
@@ -56,7 +56,7 @@ public class PlayerMove : MonoBehaviour
     private void BougeJoueur()
     {
         // transform.Translate(_mouvementHorizontal * _speed * Time.fixedDeltaTime, 0, _mouvementVerticale * _speed * Time.fixedDeltaTime);
-        _rb.velocity = new Vector3(_skewedInput.x * _speed * Time.fixedDeltaTime, 0, _skewedInput.z * _speed * Time.fixedDeltaTime );
+        _rb.velocity = new Vector3(_input.ToIso().x * _speed * Time.fixedDeltaTime, 0, _input.ToIso().z * _speed * Time.fixedDeltaTime );
 
     }
 }
