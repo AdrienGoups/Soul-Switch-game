@@ -42,10 +42,6 @@ public class PlayerMove : MonoBehaviour
     void Look(){
         if(_input != Vector3.zero){
 
-            
-
- 
-
             var relative = (transform.position + _input.ToIso()) - transform.position;
             var rot = Quaternion.LookRotation(relative, Vector3.up);
 
