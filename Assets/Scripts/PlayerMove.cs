@@ -35,7 +35,7 @@ public class PlayerMove : MonoBehaviour
     public void OnMove(InputValue value)
     {
         _touchesClavier = value.Get<Vector2>();
-        Debug.Log(_touchesClavier);
+        // Debug.Log(_touchesClavier);
         _input = new Vector3(_touchesClavier.x, 0, _touchesClavier.y);
     }
 
