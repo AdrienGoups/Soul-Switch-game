@@ -42,31 +42,11 @@ public class SwitchPlayer : MonoBehaviour
 
         Debug.Log(_playerIndex);
 
-        switch (playerCount){
-            case 1:  
-                _player1.GetComponent<PlayerInput>().enabled = false;
-                
-                break;
-            case 2:
-                _player1.GetComponent<PlayerInput>().enabled = false;
-                _player2.GetComponent<PlayerInput>().enabled = false;
-                
-                break;
-            case 3:
-                _player1.GetComponent<PlayerInput>().enabled = false;
-                _player2.GetComponent<PlayerInput>().enabled = false;
-                _player3.GetComponent<PlayerInput>().enabled = false;
-                
-                break;
-            case 4:
-                _player1.GetComponent<PlayerInput>().enabled = false;
-                _player2.GetComponent<PlayerInput>().enabled = false;
-                _player3.GetComponent<PlayerInput>().enabled = false;
-                _player4.GetComponent<PlayerInput>().enabled = false;
-                
-                break;
-        }
-        
+        _player1.GetComponent<PlayerInput>().enabled = false;
+        _player2.GetComponent<PlayerInput>().enabled = false;
+        _player3.GetComponent<PlayerInput>().enabled = false;
+        _player4.GetComponent<PlayerInput>().enabled = false;
+
         switch (_playerIndex){
             case 1:  
                 _player1.GetComponent<PlayerInput>().enabled = true;
