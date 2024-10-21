@@ -29,7 +29,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         BougeJoueur();
-        Look();
+        // Look();
     }
 
     public void OnMove(InputValue value)
@@ -39,15 +39,15 @@ public class PlayerMove : MonoBehaviour
         _input = new Vector3(_touchesClavier.x, 0, _touchesClavier.y);
     }
 
-    void Look(){
-        if(_input != Vector3.zero){
+    // void Look(){
+    //     if(_input != Vector3.zero){
 
-            var relative = (transform.position + _input.ToIso()) - transform.position;
-            var rot = Quaternion.LookRotation(relative, Vector3.up);
+    //         var relative = (transform.position + _input.ToIso()) - transform.position;
+    //         var rot = Quaternion.LookRotation(relative, Vector3.up);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, _turnSpeed * Time.fixedDeltaTime);
-        }
-    }
+    //         transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, _turnSpeed * Time.fixedDeltaTime);
+    //     }
+    // }
 
     private void BougeJoueur()
     {
